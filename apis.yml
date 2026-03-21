@@ -1,0 +1,7 @@
+aid: baker-hughes
+url: https://raw.githubusercontent.com/api-evangelist/baker-hughes/refs/heads/main/apis.yml
+modified: '2026-03-21'
+apis: []
+common:
+  - type: Website
+    url: https://www.baker-hughes.com
