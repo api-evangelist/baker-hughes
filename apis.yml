@@ -1,7 +1,12 @@
 aid: baker-hughes
-url: https://raw.githubusercontent.com/api-evangelist/baker-hughes/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/baker-hughes/refs/heads/main/apis.yml
 modified: '2026-03-21'
 apis: []
 common:
   - type: Website
     url: https://www.baker-hughes.com
+description: >-
+  Baker Hughes is an energy technology company that provides solutions to energy and
+  industrial customers worldwide, with operations spanning oilfield services, equipment,
+  and digital solutions.
