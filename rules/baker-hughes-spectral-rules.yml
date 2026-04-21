@@ -1,0 +1,148 @@
+rules:
+  # Info Object Rules
+  baker-hughes-info-contact-required:
+    description: Baker Hughes APIs must include contact information.
+    message: "API info must include a contact object with name and email."
+    severity: warn
+    given: "$.info"
+    then:
+      field: contact
+      function: truthy
+
+  baker-hughes-info-version-semver:
+    description: API version must follow semantic versioning.
+    message: "API version must be in semver format (e.g. 1.0.0)."
+    severity: warn
+    given: "$.info.version"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[0-9]+\\.[0-9]+\\.[0-9]+"
+
+  # Path Rules
+  baker-hughes-path-kebab-case:
+    description: Path segments must use kebab-case.
+    message: "Path segments must be kebab-case (lowercase with hyphens, no underscores)."
+    severity: warn
+    given: "$.paths[*]~"
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "_"
+
+  baker-hughes-path-asset-id-param:
+    description: Asset resource paths should use assetId as the path parameter.
+    message: "Asset paths should use {assetId} as the identifier parameter."
+    severity: info
+    given: "$.paths[*]~"
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "\\{asset[^I]"
+
+  # Operation Rules
+  baker-hughes-operation-id-required:
+    description: All operations must have an operationId.
+    message: "Operation must have an operationId."
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete,options,head]"
+    then:
+      field: operationId
+      function: truthy
+
+  baker-hughes-operation-summary-required:
+    description: All operations must have a summary.
+    message: "Operation must have a summary."
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: summary
+      function: truthy
+
+  baker-hughes-operation-tags-required:
+    description: All operations must have at least one tag.
+    message: "Operation must have at least one tag for categorization."
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: tags
+      function: truthy
+
+  # Security Rules
+  baker-hughes-security-required:
+    description: All Baker Hughes APIs must define security schemes.
+    message: "API must define security requirements."
+    severity: error
+    given: "$"
+    then:
+      field: security
+      function: truthy
+
+  baker-hughes-oauth2-required:
+    description: Baker Hughes APIs should use OAuth2 for authentication.
+    message: "Security schemes should include OAuth2."
+    severity: warn
+    given: "$.components.securitySchemes[*]"
+    then:
+      field: type
+      function: enumeration
+      functionOptions:
+        values: [oauth2, http, apiKey]
+
+  # Response Rules
+  baker-hughes-response-200-required:
+    description: GET operations must define a 200 response.
+    message: "GET operations must define a 200 success response."
+    severity: error
+    given: "$.paths[*].get.responses"
+    then:
+      field: "200"
+      function: truthy
+
+  baker-hughes-response-error-schemas:
+    description: Error responses must reference a schema.
+    message: "4xx and 5xx responses should include a schema."
+    severity: warn
+    given: "$.paths[*][*].responses[4XX,5XX].content[*]"
+    then:
+      field: schema
+      function: truthy
+
+  # Schema Rules
+  baker-hughes-schema-description-required:
+    description: All named schemas must have a description.
+    message: "Schema components must have a description."
+    severity: warn
+    given: "$.components.schemas[*]"
+    then:
+      field: description
+      function: truthy
+
+  baker-hughes-schema-properties-descriptions:
+    description: Schema properties should have descriptions.
+    message: "Schema properties should include descriptions."
+    severity: info
+    given: "$.components.schemas[*].properties[*]"
+    then:
+      field: description
+      function: truthy
+
+  # Parameter Rules
+  baker-hughes-parameter-description-required:
+    description: All parameters must have descriptions.
+    message: "Parameters must include a description."
+    severity: warn
+    given: "$.paths[*][*].parameters[*]"
+    then:
+      field: description
+      function: truthy
+
+  # Tag Rules
+  baker-hughes-tags-description-required:
+    description: Global tags must have descriptions.
+    message: "Tags defined in the info section must have descriptions."
+    severity: warn
+    given: "$.tags[*]"
+    then:
+      field: description
+      function: truthy

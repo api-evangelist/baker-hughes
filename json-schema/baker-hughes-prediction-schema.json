@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/baker-hughes/json-schema/baker-hughes-prediction-schema.json",
+  "title": "Prediction",
+  "description": "AI-generated predictive maintenance forecast from Baker Hughes BHC3 AI Suite.",
+  "type": "object",
+  "properties": {
+    "predictionId": {
+      "type": "string",
+      "description": "Unique identifier for the prediction."
+    },
+    "assetId": {
+      "type": "string",
+      "description": "Identifier of the asset this prediction applies to."
+    },
+    "predictionType": {
+      "type": "string",
+      "description": "Category of prediction.",
+      "enum": ["failure", "maintenance", "production", "efficiency", "well-integrity"]
+    },
+    "failureProbability": {
+      "type": "number",
+      "description": "Probability of failure in the next prediction window (0.0 to 1.0).",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "estimatedTimeToFailure": {
+      "type": "string",
+      "description": "Estimated time until failure expressed as ISO 8601 duration (e.g., P7D for 7 days)."
+    },
+    "confidenceScore": {
+      "type": "number",
+      "description": "Model confidence in this prediction (0.0 to 1.0).",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "recommendedAction": {
+      "type": "string",
+      "description": "Recommended maintenance or operational action."
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this prediction was generated."
+    }
+  },
+  "required": ["predictionId", "assetId", "predictionType", "failureProbability", "recommendedAction"]
+}

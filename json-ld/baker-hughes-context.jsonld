@@ -1,0 +1,113 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "baker-hughes": "https://www.bakerhughes.com/vocab/",
+
+    "Asset": {
+      "@id": "baker-hughes:Asset",
+      "@type": "@id"
+    },
+    "assetId": {
+      "@id": "baker-hughes:assetId",
+      "@type": "xsd:string"
+    },
+    "assetName": {
+      "@id": "baker-hughes:assetName",
+      "@type": "xsd:string"
+    },
+    "assetType": {
+      "@id": "baker-hughes:assetType",
+      "@type": "xsd:string"
+    },
+    "location": {
+      "@id": "baker-hughes:location",
+      "@type": "xsd:string"
+    },
+    "healthScore": {
+      "@id": "baker-hughes:healthScore",
+      "@type": "xsd:decimal"
+    },
+    "status": {
+      "@id": "baker-hughes:status",
+      "@type": "xsd:string"
+    },
+
+    "SensorReading": {
+      "@id": "baker-hughes:SensorReading",
+      "@type": "@id"
+    },
+    "sensorId": {
+      "@id": "baker-hughes:sensorId",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "baker-hughes:value",
+      "@type": "xsd:decimal"
+    },
+    "unit": {
+      "@id": "baker-hughes:unit",
+      "@type": "xsd:string"
+    },
+    "timestamp": {
+      "@id": "baker-hughes:timestamp",
+      "@type": "xsd:dateTime"
+    },
+
+    "Alert": {
+      "@id": "baker-hughes:Alert",
+      "@type": "@id"
+    },
+    "alertId": {
+      "@id": "baker-hughes:alertId",
+      "@type": "xsd:string"
+    },
+    "severity": {
+      "@id": "baker-hughes:severity",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "baker-hughes:message",
+      "@type": "xsd:string"
+    },
+
+    "Prediction": {
+      "@id": "baker-hughes:Prediction",
+      "@type": "@id"
+    },
+    "predictionId": {
+      "@id": "baker-hughes:predictionId",
+      "@type": "xsd:string"
+    },
+    "failureProbability": {
+      "@id": "baker-hughes:failureProbability",
+      "@type": "xsd:decimal"
+    },
+    "recommendedAction": {
+      "@id": "baker-hughes:recommendedAction",
+      "@type": "xsd:string"
+    },
+    "estimatedTimeToFailure": {
+      "@id": "baker-hughes:estimatedTimeToFailure",
+      "@type": "xsd:string"
+    },
+
+    "EmissionMeasurement": {
+      "@id": "baker-hughes:EmissionMeasurement",
+      "@type": "@id"
+    },
+    "emissionType": {
+      "@id": "baker-hughes:emissionType",
+      "@type": "xsd:string"
+    },
+    "quantity": {
+      "@id": "baker-hughes:quantity",
+      "@type": "xsd:decimal"
+    },
+    "facilityId": {
+      "@id": "baker-hughes:facilityId",
+      "@type": "xsd:string"
+    }
+  }
+}

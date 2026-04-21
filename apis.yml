@@ -18,7 +18,7 @@ tags:
   - Asset Performance Management
   - Digital Energy
 created: '2026-03-21'
-modified: '2026-04-19'
+modified: '2026-04-21'
 specificationVersion: '0.19'
 apis:
   - aid: baker-hughes:cordant-platform
@@ -72,6 +72,14 @@ common:
     url: https://www.bakerhughes.com/privacy-policy
   - type: TermsOfService
     url: https://www.bakerhughes.com/terms-and-conditions
+  - type: SpectralRules
+    url: rules/baker-hughes-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/baker-hughes-vocabulary.yaml
+  - type: NaftikoCapability
+    url: capabilities/baker-hughes-industrial-platform.yaml
+  - type: JSON-LD
+    url: json-ld/baker-hughes-context.jsonld
   - name: Features
     type: Features
     data:
@@ -87,6 +95,10 @@ common:
         description: Connectivity between operational technology (OT) sensor data and enterprise IT systems.
       - name: Digital Thread
         description: Connected data fabric linking assets, processes, and enterprise systems across operations.
+      - name: Well Integrity Monitoring
+        description: Continuous monitoring of well barrier status and integrity for safe operations.
+      - name: Production Optimization
+        description: AI-driven optimization of oil and gas production rates from well and reservoir data.
   - name: UseCases
     type: UseCases
     data:
@@ -98,6 +110,10 @@ common:
         description: Monitor and report on emissions, energy consumption, and ESG metrics across facilities.
       - name: Industrial Process Control
         description: Automate and optimize industrial processes using real-time sensor data and AI recommendations.
+      - name: Well Lifecycle Management
+        description: Monitor and optimize oil and gas well performance across the full production lifecycle.
+      - name: Inventory Optimization
+        description: Optimize spare parts inventory for maintenance operations using AI demand forecasting.
   - name: Integrations
     type: Integrations
     data:
@@ -109,6 +125,10 @@ common:
         description: Integration with SAP ERP for asset and maintenance management data.
       - name: OSIsoft PI
         description: Integration with OSIsoft PI data historian for real-time process data.
+      - name: Maximo
+        description: Integration with IBM Maximo asset management for work order lifecycle.
+      - name: Honeywell
+        description: Integration with Honeywell process control and DCS systems.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

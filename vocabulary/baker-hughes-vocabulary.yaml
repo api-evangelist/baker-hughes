@@ -1,0 +1,57 @@
+vocabulary:
+  name: Baker Hughes Vocabulary
+  description: Unified taxonomy for Baker Hughes Cordant and BHC3 AI Suite APIs covering industrial IoT, asset performance management, and energy AI applications.
+  version: '1.0'
+  provider: baker-hughes
+
+resources:
+  - name: Asset
+    description: Industrial equipment or facility being monitored for performance and maintenance.
+    aliases: [equipment, device, machine]
+  - name: Sensor
+    description: IoT sensor or measurement point providing real-time operational data.
+    aliases: [measurement, datapoint]
+  - name: Alert
+    description: Notification triggered by anomalous asset behavior or threshold breach.
+    aliases: [notification, alarm]
+  - name: Prediction
+    description: AI-generated forecast of asset failure, maintenance need, or production outcome.
+    aliases: [forecast, recommendation]
+  - name: Emission
+    description: Greenhouse gas or pollutant measurement from industrial operations.
+    aliases: [ghg, carbon]
+  - name: WorkOrder
+    description: Maintenance or inspection task associated with an asset.
+    aliases: [task, job]
+
+actions:
+  - name: monitor
+    description: Track real-time asset health, sensor readings, and operational metrics.
+  - name: predict
+    description: Generate AI-driven forecasts for maintenance needs or production optimization.
+  - name: optimize
+    description: Recommend or apply process changes to improve efficiency or output.
+  - name: report
+    description: Generate emissions, performance, or compliance reports.
+  - name: alert
+    description: Notify operators of anomalies or threshold breaches.
+  - name: integrate
+    description: Connect OT sensor data to enterprise IT systems.
+
+workflows:
+  - name: Predictive Maintenance
+    description: End-to-end workflow from sensor data collection to maintenance work order creation.
+  - name: Emissions Tracking
+    description: Continuous monitoring and reporting of greenhouse gas emissions across facilities.
+  - name: Production Optimization
+    description: AI-driven analysis and recommendations for maximizing oil and gas production.
+
+personas:
+  - name: Plant Engineer
+    description: Industrial engineer responsible for equipment reliability and performance.
+  - name: Data Scientist
+    description: Analyst building and deploying AI models for energy applications.
+  - name: Operations Manager
+    description: Manager overseeing production, safety, and emissions compliance.
+  - name: IT/OT Integrator
+    description: Engineer connecting operational technology to enterprise data systems.

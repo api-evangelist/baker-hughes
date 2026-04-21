@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/baker-hughes/json-schema/baker-hughes-asset-schema.json",
+  "title": "Asset",
+  "description": "An industrial asset monitored by Baker Hughes Cordant platform.",
+  "type": "object",
+  "properties": {
+    "assetId": {
+      "type": "string",
+      "description": "Unique identifier for the asset."
+    },
+    "assetName": {
+      "type": "string",
+      "description": "Human-readable name for the asset."
+    },
+    "assetType": {
+      "type": "string",
+      "description": "Classification of the asset (e.g., compressor, pump, turbine).",
+      "enum": ["compressor", "pump", "turbine", "heat-exchanger", "separator", "valve", "other"]
+    },
+    "facilityId": {
+      "type": "string",
+      "description": "Identifier of the facility where the asset is located."
+    },
+    "location": {
+      "type": "string",
+      "description": "Geographic or plant location of the asset."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current operational status of the asset.",
+      "enum": ["running", "idle", "maintenance", "fault", "offline"]
+    },
+    "healthScore": {
+      "type": "number",
+      "description": "AI-computed health score from 0 (critical) to 100 (healthy).",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of the last data update for this asset."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "User-defined tags for organizing and filtering assets."
+    }
+  },
+  "required": ["assetId", "assetName", "assetType", "status"]
+}

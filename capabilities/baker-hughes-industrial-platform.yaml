@@ -1,0 +1,45 @@
+name: Baker Hughes Industrial Platform Capability
+description: >-
+  Naftiko capability for Baker Hughes Cordant industrial software platform covering
+  asset performance management, process optimization, and emissions management workflows
+  for energy and industrial operations.
+version: '1.0'
+provider: baker-hughes
+
+workflows:
+  - name: Asset Performance Monitoring
+    description: Monitor industrial asset health, sensor data, and maintenance alerts.
+    apis:
+      - baker-hughes:cordant-platform
+    tools:
+      - name: GetAssetStatus
+        description: Retrieve current health and operational status of an industrial asset.
+      - name: ListAlerts
+        description: List active alerts and anomalies for monitored assets.
+      - name: GetSensorReadings
+        description: Retrieve time-series sensor data for a specific asset.
+    persona: Plant Engineer
+
+  - name: Predictive Maintenance
+    description: AI-driven prediction of equipment failures and maintenance scheduling.
+    apis:
+      - baker-hughes:bhc3-ai-suite
+    tools:
+      - name: GetMaintenancePredictions
+        description: Retrieve AI predictions for upcoming maintenance needs.
+      - name: CreateWorkOrder
+        description: Generate a maintenance work order from a prediction.
+      - name: GetRiskScore
+        description: Retrieve reliability risk score for an asset.
+    persona: Operations Manager
+
+  - name: Emissions Tracking
+    description: Track and report greenhouse gas emissions across industrial facilities.
+    apis:
+      - baker-hughes:cordant-platform
+    tools:
+      - name: GetEmissionsMeasurements
+        description: Retrieve emissions measurements for a facility or asset group.
+      - name: GenerateEmissionsReport
+        description: Generate ESG and emissions compliance report.
+    persona: Sustainability Officer
