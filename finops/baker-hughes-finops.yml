@@ -8,109 +8,87 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Baker Hughes
 providerId: baker-hughes
-publisherName: Baker Hughes
-serviceCategory: API
+publisherName: Baker Hughes Company
+serviceCategory: Industrial / Energy Software
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Energy Technology
   - Industrial IoT
   - Oil And Gas
-  - Asset Performance Management
-  - Digital Energy
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the Baker Hughes API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+description: 'FOCUS-aligned FinOps shape for Baker Hughes digital platforms (Cordant, BHC3 AI Suite):
+  enterprise license + custom-negotiated. Public meter or rate-card data is not available; this artifact
+  describes the dimensions a customer should track inside their own contract.'
+notes: No public pricing. Replace meter assumptions with the meters defined in the executed Baker Hughes
+  contract once available.
+sources:
+  - https://www.bakerhughes.com/cordant
+  - https://www.bakerhughes.com/bhc3
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: Negotiate access to a contract-level usage report from Baker Hughes Digital (assets monitored,
+      models scored, telemetry ingested) so consumption can be tracked alongside the fixed license fee.
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Tag the platform license to the operations or asset-management business unit that owns
+      the production assets being monitored; allocate AI-application costs by use case (predictive maintenance,
+      production optimization, etc.).
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Right-size the asset-monitoring scope each renewal — only instrument assets where the
+      AI model has demonstrated downtime or yield improvement above the per-asset license cost.
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+    description: Assign a named platform owner inside the asset-management or digital function; review
+      contract utilization before each annual true-up.
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Enterprise License (Custom)
+  billingFrequency: Annual
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
     - Tax
-    - Credit
     - Adjustment
   chargeFrequency: Recurring
 focusColumns:
-  ServiceName: Baker Hughes
-  ServiceCategory: Developer Tools / API
+  ServiceName: Baker Hughes Digital Platforms
+  ServiceCategory: Industrial / Energy Software
   ProviderName: Baker Hughes
-  PublisherName: Baker Hughes
-  InvoiceIssuerName: Baker Hughes
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Baker Hughes Company
+  InvoiceIssuerName: Baker Hughes Company
+  PricingCategory: Enterprise License
+  PricingUnit: contract-year
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
 meters:
-  - name: api_requests
-    description: Count of billable API requests
+  - name: platform_license
+    description: Annual enterprise platform license (Cordant / BHC3 AI Suite)
+    unit: contract-year
+    aggregation: sum
+    dimensions:
+      - tenant
+      - product
+  - name: monitored_assets
+    description: Assets (wells, equipment, plants) under platform monitoring; common contract dimension
+    unit: asset
+    aggregation: max
+    dimensions:
+      - asset_class
+      - site
+  - name: ai_application_seats
+    description: BHC3 AI application seats / use-case licenses
+    unit: seat
+    aggregation: sum
+    dimensions:
+      - application
+      - business_unit
+  - name: api_calls
+    description: API call volume — tracked for capacity-management, not per-call billed
     unit: request
     aggregation: sum
     dimensions:
       - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
+      - tenant
 apis:
   - name: Baker Hughes Cordant Industrial Platform
     baseURL: ''
@@ -131,12 +109,12 @@ apis:
     serviceName: Baker Hughes BHC3 AI Suite
     serviceCategory: API
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+  - name: Cost per Monitored Asset
+    metric: platform_license / monitored_assets
+    target: align to per-asset downtime / yield uplift
+  - name: Cost per AI Use Case
+    metric: ai_application_cost / instrumented_use_cases
+    target: TBD per business unit
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
