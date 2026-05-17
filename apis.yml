@@ -78,7 +78,7 @@ common:
     url: vocabulary/baker-hughes-vocabulary.yaml
   - type: NaftikoCapability
     url: capabilities/baker-hughes-industrial-platform.yaml
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/baker-hughes-context.jsonld
   - name: Features
     type: Features
