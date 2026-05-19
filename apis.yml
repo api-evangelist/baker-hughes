@@ -60,6 +60,10 @@ apis:
       - type: APIReference
         url: https://www.bakerhughes.com/ai-bakerhughesc3ai/
 common:
+  - type: GitHubOrganization
+    url: https://github.com/BakerHughes
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/bakerhughes
   - type: Website
     url: https://www.bakerhughes.com
   - type: Portal
