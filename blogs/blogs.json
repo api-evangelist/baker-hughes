@@ -2,10 +2,17 @@
   "repo": "baker-hughes",
   "feeds": [
     {
+      "source": "https://www.bakerhughes.com/company/news",
+      "feed_url": "https://www.bakerhughes.com/company/news",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
       "source": "https://www.bakerhughes.com/company/digital",
       "error": "HTTPError"
     }
   ],
-  "fetched": "2026-06-01T23:35:02Z",
-  "post_count": 0
+  "post_count": 1,
+  "fetched": "2026-06-14T20:42:17Z"
 }
