@@ -61,6 +61,8 @@ apis:
       - type: APIReference
         url: https://www.bakerhughes.com/ai-bakerhughesc3ai/
 common:
+  - type: DomainSecurity
+    url: security/baker-hughes-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/BakerHughes
   - type: LinkedIn
