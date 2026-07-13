@@ -2,13 +2,11 @@
   "repo": "baker-hughes",
   "feeds": [
     {
-      "source": "https://www.bakerhughes.com/company/news",
-      "feed_url": "",
-      "saved": 4,
-      "method": "agent-scrape"
+      "source": "https://www.bakerhughes.com/company/digital",
+      "error": "HTTPError"
     }
   ],
-  "post_count": 5,
-  "fetched": "2026-06-27T12:27:15Z",
-  "agent_pulled": "2026-06-27"
+  "post_count": 6,
+  "fetched": "2026-07-11T11:50:51Z",
+  "agent_pulled": "2026-07-04"
 }
