@@ -95,8 +95,6 @@ common:
     url: rules/baker-hughes-spectral-rules.yml
   - type: Vocabulary
     url: vocabulary/baker-hughes-vocabulary.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/baker-hughes-industrial-platform.yaml
   - type: JSONLD
     url: json-ld/baker-hughes-context.jsonld
   - name: Features
