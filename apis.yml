@@ -32,7 +32,7 @@ tags:
   - Fortune 500
 created: '2026-03-21'
 modified: '2026-04-21'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: baker-hughes:cordant-platform
     name: Baker Hughes Cordant Industrial Platform
