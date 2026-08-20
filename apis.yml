@@ -26,6 +26,13 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/baker-hugh
 tags:
   - Energy Technology
   - Industrial IoT
+  - Oil and Gas
+  - Asset Performance Management
+  - Digital Energy
+  - Fortune 500
+tags_raw:
+  - Energy Technology
+  - Industrial IoT
   - Oil And Gas
   - Asset Performance Management
   - Digital Energy
@@ -63,6 +70,11 @@ apis:
       C3.ai's model-driven architecture enabling enterprise AI application development.
     humanURL: https://www.bakerhughes.com/bhc3
     tags:
+      - Artificial Intelligence
+      - Energy
+      - Oil and Gas
+      - Predictive Maintenance
+    tags_raw:
       - Artificial Intelligence
       - Energy
       - Oil And Gas
