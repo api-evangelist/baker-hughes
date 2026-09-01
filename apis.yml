@@ -37,7 +37,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/baker-hugh
 tags:
   - Energy Technology
   - Industrial IoT
-  - Oil And Gas
+  - Oil and Gas
   - Asset Performance Management
   - Digital Energy
   - Fortune 500
@@ -83,7 +83,7 @@ apis:
     tags:
       - Artificial Intelligence
       - Energy
-      - Oil And Gas
+      - Oil and Gas
       - Predictive Maintenance
     tags_raw:
       - Artificial Intelligence
