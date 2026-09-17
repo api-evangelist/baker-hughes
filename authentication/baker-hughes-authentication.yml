@@ -1,0 +1,98 @@
+generated: '2026-09-17'
+method: probed
+source: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+provider: Baker Hughes
+providerId: baker-hughes
+scope: Identity for the Baker Hughes Developer Portal (developer.bakerhughes.com, a Backstage instance) and the
+  Cordant platform tenants it fronts. No public API reference documents how a Cordant/BHC3 API call itself is authenticated;
+  everything below is read from the provider's own OIDC discovery document, not inferred.
+summary: 'OpenID Connect / OAuth 2.0 via a Keycloak realm (''dedicated''). The developer portal''s sign-in (GET
+  /api/auth/keycloak/start?env=development on developer.bakerhughes.com) 302s to this realm''s authorization endpoint
+  with client_id=app-cdp, PKCE S256 and scope ''openid profile email''. Anonymous calls to the portal''s catalog
+  API (/api/catalog/entities) return 401 {"AuthenticationError": "Missing credentials"}; there is no self-serve
+  sign-up — the portal''s support contact is cordant_success@bakerhughes.com.'
+schemes:
+- name: oidc
+  type: openIdConnect
+  openIdConnectUrl: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+  issuer: https://auth-developer.bakerhughes.com/auth/realms/dedicated
+  authorization_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/auth
+  token_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/token
+  userinfo_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/userinfo
+  jwks_uri: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/certs
+  introspection_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/token/introspect
+  revocation_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/revoke
+  end_session_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/logout
+  device_authorization_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/auth/device
+  pushed_authorization_request_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/ext/par/request
+  backchannel_authentication_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/protocol/openid-connect/ext/ciba/auth
+  registration_endpoint: https://auth-developer.bakerhughes.com/auth/realms/dedicated/clients-registrations/openid-connect
+  grant_types_supported:
+  - authorization_code
+  - client_credentials
+  - implicit
+  - password
+  - refresh_token
+  - urn:ietf:params:oauth:grant-type:device_code
+  - urn:ietf:params:oauth:grant-type:token-exchange
+  - urn:ietf:params:oauth:grant-type:uma-ticket
+  - urn:openid:params:grant-type:ciba
+  response_types_supported:
+  - code
+  - none
+  - id_token
+  - token
+  - id_token token
+  - code id_token
+  - code token
+  - code id_token token
+  code_challenge_methods_supported:
+  - plain
+  - S256
+  token_endpoint_auth_methods_supported:
+  - private_key_jwt
+  - client_secret_basic
+  - client_secret_post
+  - tls_client_auth
+  - client_secret_jwt
+  tls_client_certificate_bound_access_tokens: true
+  require_pushed_authorization_requests: false
+  scopes_supported:
+  - openid
+  - tenant-scope
+  - abac_scope
+  - email
+  - profile
+  id_token_signing_alg_values_supported:
+  - PS384
+  - RS384
+  - EdDSA
+  - ES384
+  - HS256
+  - HS512
+  - ES256
+  - RS256
+  - HS384
+  - ES512
+  - PS256
+  - PS512
+  - RS512
+  observed_client:
+    client_id: app-cdp
+    redirect_uri: https://developer.bakerhughes.com/api/auth/keycloak/handler/frame
+    scope: openid profile email
+    code_challenge_method: S256
+    evidence: Location header of GET https://developer.bakerhughes.com/api/auth/keycloak/start?env=development (302)
+portal_gate:
+  url: https://developer.bakerhughes.com/api/catalog/entities
+  status: 401
+  body: '{"error":{"name":"AuthenticationError","message":"Missing credentials"}}'
+  probed: '2026-09-17'
+credential_issuance: Not self-serve. No public sign-up or key-issuance page was found; the portal's only published
+  contact is cordant_success@bakerhughes.com and the Cordant site routes to CordantTechSupport@BakerHughes.com.
+notes:
+- The realm advertises a registration_endpoint (Keycloak clients-registrations/openid-connect); anonymous GET returns
+  404 and no initial-access-token policy is published, so open dynamic client registration is NOT asserted.
+- The realm-level public_key and JWKS (RS256 sig + RSA-OAEP enc keys) are served anonymously at the jwks_uri.
+- Cordant marketing copy says the platform 'offers APIs for integration' (OT/IT connectivity) but publishes no auth
+  scheme for them; treat API-call authentication as undocumented.

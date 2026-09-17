@@ -1,0 +1,82 @@
+generated: '2026-09-17'
+method: probed
+source: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+provider: Baker Hughes
+providerId: baker-hughes
+note: Every entry below is read from the provider-served OIDC discovery document for the Keycloak realm that fronts
+  developer.bakerhughes.com. Nothing is asserted about the (unpublished) Cordant/BHC3 API contract itself — no OpenAPI,
+  AsyncAPI, GraphQL SDL or WSDL is public, so pagination/idempotency/RFC 9457/domain-standard conformance are all
+  unknown, not false. Baker Hughes markets ISA/IEC 62443 certification for Bently Nevada hardware (white paper 179M4439)
+  — a product certification, not an API-contract conformance, so it is listed as a claim only.
+conformance:
+- id: oidc
+  name: OpenID Connect Discovery 1.0
+  conforms: true
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+  detail: issuer, authorization_endpoint, token_endpoint, jwks_uri, userinfo_endpoint, response_types_supported,
+    subject_types_supported and id_token_signing_alg_values_supported all present.
+- id: oauth2
+  name: OAuth 2.0 Authorization Server Metadata (RFC 8414)
+  conforms: true
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/oauth-authorization-server
+  detail: Served at the issuer-relative location; grant_types_supported, token_endpoint_auth_methods_supported,
+    revocation_endpoint, introspection_endpoint present.
+- id: pkce
+  name: PKCE (RFC 7636)
+  conforms: true
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+  detail: 'code_challenge_methods_supported: [plain, S256]; the portal''s own login uses S256.'
+- id: oauth2-par
+  name: Pushed Authorization Requests (RFC 9126)
+  conforms: true
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+  detail: 'pushed_authorization_request_endpoint advertised; require_pushed_authorization_requests: false.'
+- id: oauth2-device
+  name: Device Authorization Grant (RFC 8628)
+  conforms: true
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+  detail: device_authorization_endpoint advertised and urn:ietf:params:oauth:grant-type:device_code in grant_types_supported.
+- id: oauth2-token-exchange
+  name: OAuth 2.0 Token Exchange (RFC 8693)
+  conforms: true
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+  detail: urn:ietf:params:oauth:grant-type:token-exchange in grant_types_supported.
+- id: oauth2-mtls
+  name: Mutual-TLS client auth and certificate-bound tokens (RFC 8705)
+  conforms: true
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+  detail: 'tls_client_auth in token_endpoint_auth_methods_supported; tls_client_certificate_bound_access_tokens:
+    true; mtls_endpoint_aliases present.'
+- id: ciba
+  name: OpenID Connect Client-Initiated Backchannel Authentication
+  conforms: true
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+  detail: backchannel_authentication_endpoint advertised; urn:openid:params:grant-type:ciba in grant_types_supported.
+- id: oidc-rp-initiated-logout
+  name: OIDC RP-Initiated Logout
+  conforms: true
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+  detail: end_session_endpoint advertised.
+- id: oauth2-dcr
+  name: Dynamic Client Registration (RFC 7591)
+  conforms: false
+  evidence: https://auth-developer.bakerhughes.com/auth/realms/dedicated/clients-registrations/openid-connect
+  detail: registration_endpoint is advertised, but anonymous access is not demonstrated (GET returns 404 and Keycloak
+    requires an initial access token by default). Recorded as not verified rather than as served.
+- id: rfc9116
+  name: security.txt (RFC 9116)
+  conforms: false
+  evidence: https://www.bakerhughes.com/.well-known/security.txt
+  detail: 404 on www; 404 on the auth host; SPA shell on the developer portal.
+- id: rfc9728
+  name: OAuth Protected Resource Metadata (RFC 9728)
+  conforms: false
+  evidence: https://developer.bakerhughes.com/.well-known/oauth-protected-resource
+  detail: No host serves it (SPA shell / 404 / Incapsula 503).
+- id: iec-62443
+  name: ISA/IEC 62443 (product/component certification)
+  conforms: false
+  claimed: true
+  evidence: https://dam.bakerhughes.com/m/3a6cf27f11e77243/original/Cybersecurity-and-IEC-62443-Part-III-Component-Certification-White-Paper-179M4439.pdf
+  detail: Claimed for Bently Nevada hardware in a Baker Hughes white paper; not an API-contract conformance and
+    not verifiable from any published contract, so conforms stays false.

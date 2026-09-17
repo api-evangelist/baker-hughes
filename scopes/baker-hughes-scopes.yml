@@ -1,0 +1,31 @@
+generated: '2026-09-17'
+method: probed
+source: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+provider: Baker Hughes
+providerId: baker-hughes
+issuer: https://auth-developer.bakerhughes.com/auth/realms/dedicated
+docs: null
+note: scopes_supported read verbatim from the Keycloak realm's OIDC discovery document. Baker Hughes publishes no
+  scope reference page, so descriptions are limited to what the OIDC Core spec defines (openid/profile/email) and
+  what the scope NAME says for the two custom ones; nothing about what tenant-scope or abac_scope grants is asserted.
+scopes:
+- name: openid
+  description: OpenID Connect authentication request (OIDC Core 3.1.2.1).
+  standard: true
+- name: profile
+  description: Standard OIDC profile claims (name, family_name, given_name, ...).
+  standard: true
+- name: email
+  description: Standard OIDC email + email_verified claims.
+  standard: true
+- name: tenant-scope
+  description: Custom realm scope. Name suggests tenant selection for the multi-tenant Cordant platform; semantics
+    not published.
+  standard: false
+- name: abac_scope
+  description: Custom realm scope. Name suggests attribute-based access control claims; semantics not published.
+  standard: false
+observed_requests:
+- client_id: app-cdp
+  scope: openid profile email
+  context: developer.bakerhughes.com sign-in

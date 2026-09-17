@@ -1,0 +1,13 @@
+generated: '2026-09-17'
+method: searched
+source: registry.npmjs.org search (bakerhughes, "baker hughes", cordant, "bently nevada"); pypi.org/pypi/<name>/json for bakerhughes, baker-hughes, cordant, bently-nevada, bhc3, system1; azuresearch-usnc.nuget.org (bakerhughes, bently); github.com/BakerHughes
+provider: Baker Hughes
+providerId: baker-hughes
+package_count: 0
+packages: []
+note: >-
+  No first-party client library on npm, PyPI or NuGet as of 2026-09-17 — every search hit
+  was an unrelated package (the only 'cordant' npm package is a third party's Google-API
+  helper). The BakerHughes GitHub organization exists but publishes 0 public repositories.
+  Recorded as a checked absence, not a guess; version/published fields are omitted because
+  there is no package to date.

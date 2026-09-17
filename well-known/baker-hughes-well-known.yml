@@ -1,0 +1,345 @@
+generated: '2026-09-17'
+method: probed
+source: live GET of each path on every host the record knows (registrable domain + www, developer portal, its Keycloak
+  auth server, api.bakerhughes.com) with a per-host negative control; browser User-Agent
+summary: 'One real discovery surface: the Keycloak realm behind developer.bakerhughes.com serves an OIDC discovery
+  document (issuer https://auth-developer.bakerhughes.com/auth/realms/dedicated). No security.txt, api-catalog,
+  apis.json, agent card, ai-plugin, UCP/ACP or AAuth document on any host. www.bakerhughes.com and api.bakerhughes.com
+  sit behind Imperva and answer challenge interstitials; developer.bakerhughes.com is a Backstage SPA that answers
+  200 HTML for every path.'
+hosts:
+- host: https://bakerhughes.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/security.txt
+  - path: /.well-known/openid-configuration
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/openid-configuration
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/oauth-authorization-server
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/oauth-protected-resource
+  - path: /.well-known/api-catalog
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/api-catalog
+  - path: /.well-known/api-catalog.json
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/api-catalog.json
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/ai-plugin.json
+  - path: /.well-known/ucp.json
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/ucp.json
+  - path: /.well-known/acp.json
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/acp.json
+  - path: /.well-known/aauth-resource.json
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/aauth-resource.json
+  - path: /.well-known/apis.json
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/apis.json
+  - path: /apis.json
+    status: 301
+    redirect: https://www.bakerhughes.com/apis.json
+  - path: /apis.yml
+    status: 301
+    redirect: https://www.bakerhughes.com/apis.yml
+  - path: /.well-known/agent-card.json
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/agent-card.json
+  - path: /.well-known/agent.json
+    status: 301
+    redirect: https://www.bakerhughes.com/.well-known/agent.json
+  negative_control:
+    path: /.well-known/baker-hughes-negative-control-6926kou7.json
+    status: 301
+    bytes: 0
+  path_echo_control: passed
+  hit_count: 0
+  note: Apex host 301s every path to www.bakerhughes.com; see that host.
+- host: https://www.bakerhughes.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 200
+    real_document: false
+    content_type: text/html
+    bytes: 212
+    result: miss-waf-challenge-shell
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 200
+    real_document: false
+    content_type: text/html
+    bytes: 212
+    result: miss-waf-challenge-shell
+  - path: /.well-known/apis.json
+    status: 200
+    real_document: false
+    content_type: text/html
+    bytes: 212
+    result: miss-waf-challenge-shell
+  - path: /apis.json
+    status: 200
+    real_document: false
+    content_type: text/html
+    bytes: 212
+    result: miss-waf-challenge-shell
+  - path: /apis.yml
+    status: 200
+    real_document: false
+    content_type: text/html
+    bytes: 212
+    result: miss-waf-challenge-shell
+  - path: /.well-known/agent-card.json
+    status: 200
+    real_document: false
+    content_type: text/html
+    bytes: 212
+    result: miss-waf-challenge-shell
+  - path: /.well-known/agent.json
+    status: 200
+    real_document: false
+    content_type: text/html
+    bytes: 212
+    result: miss-waf-challenge-shell
+  negative_control:
+    path: /.well-known/baker-hughes-negative-control-6926kou7.json
+    status: 200
+    bytes: 850
+  path_echo_control: failed
+  hit_count: 0
+  note: Imperva/Incapsula edge. Real Drupal 404 pages (482 KB) on most paths; the 200s are Incapsula challenge/block
+    interstitials (212-850 bytes, 'Request unsuccessful. Incapsula incident ID') — a WAF shell, not a document.
+    The negative control returned the same 200 shell, so no 200 on this host is a hit.
+- host: https://developer.bakerhughes.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/openid-configuration
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6397
+    result: miss-html-spa-shell
+  - path: /.well-known/api-catalog
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/api-catalog.json
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/ucp.json
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/acp.json
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/aauth-resource.json
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/apis.json
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6397
+    result: miss-html-spa-shell
+  - path: /apis.json
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6397
+    result: miss-html-spa-shell
+  - path: /apis.yml
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6397
+    result: miss-html-spa-shell
+  - path: /.well-known/agent-card.json
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6398
+    result: miss-html-spa-shell
+  - path: /.well-known/agent.json
+    status: 200
+    real_document: false
+    content_type: text/html; charset=utf-8
+    bytes: 6397
+    result: miss-html-spa-shell
+  negative_control:
+    path: /.well-known/baker-hughes-negative-control-6926kou7.json
+    status: 200
+    bytes: 6398
+  path_echo_control: failed
+  hit_count: 0
+  note: 'Backstage developer portal (backstage-app-mode: public). SPA catch-all: every path, including the negative
+    control, answers 200 with the 6.4 KB HTML shell. Nothing here is a document.'
+- host: https://auth-developer.bakerhughes.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /auth/realms/dedicated/.well-known/openid-configuration
+    status: 200
+    content_type: application/json
+    bytes: 6949
+    real_document: true
+    file: baker-hughes-openid-configuration.json
+    issuer: https://auth-developer.bakerhughes.com/auth/realms/dedicated
+    note: OIDC Discovery 1.0 issuer-relative location; Keycloak realm 'dedicated' that the developer portal's sign-in
+      (/api/auth/keycloak/start) redirects to.
+  - path: /auth/realms/dedicated/.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    bytes: 6949
+    real_document: true
+    file: baker-hughes-openid-configuration.json
+    note: RFC 8414 metadata; byte-identical to the OIDC document, so one file is kept.
+  negative_control:
+    path: /.well-known/baker-hughes-negative-control-6926kou7.json
+    status: 404
+    bytes: 188
+  path_echo_control: passed
+  hit_count: 2
+  note: Keycloak. Root /.well-known/* all 404 (negative control 404). The realm publishes a real OIDC discovery
+    document at the issuer-relative location <issuer>/.well-known/openid-configuration (OpenID Connect Discovery
+    1.0 s4) and RFC 8414 metadata at <issuer>/.well-known/oauth-authorization-server; saved verbatim.
+- host: https://api.bakerhughes.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/openid-configuration
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/oauth-authorization-server
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/oauth-protected-resource
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/api-catalog
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/api-catalog.json
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/ai-plugin.json
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/ucp.json
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/acp.json
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/aauth-resource.json
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/apis.json
+    status: 503
+    result: miss-incapsula-503
+  - path: /apis.json
+    status: 503
+    result: miss-incapsula-503
+  - path: /apis.yml
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/agent-card.json
+    status: 503
+    result: miss-incapsula-503
+  - path: /.well-known/agent.json
+    status: 503
+    result: miss-incapsula-503
+  negative_control:
+    path: /.well-known/baker-hughes-negative-control-6926kou7.json
+    status: 503
+    bytes: 860
+  path_echo_control: passed
+  hit_count: 0
+  note: Resolves and answers, but every path (negative control included) returns 503 from an Incapsula interstitial.
+    Host exists; nothing readable anonymously.

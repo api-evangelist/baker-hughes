@@ -49,7 +49,7 @@ tags_raw:
   - Digital Energy
   - Fortune 500
 created: '2026-03-21'
-modified: '2026-04-21'
+modified: '2026-09-17'
 specificationVersion: '0.23'
 apis:
   - aid: baker-hughes:cordant-platform
@@ -69,8 +69,8 @@ apis:
     properties:
       - type: Documentation
         url: https://www.bakerhughes.com/cordant/platform
-      - type: APIReference
-        url: https://www.bakerhughes.com/cordant
+      - type: HelpCenter
+        url: https://www.bakerhughes.com/cordant/tech-support
   - aid: baker-hughes:bhc3-ai-suite
     name: Baker Hughes BHC3 AI Suite
     description: >-
@@ -79,7 +79,7 @@ apis:
       maintenance, reliability, production optimization, inventory optimization, well placement,
       well integrity, and yield optimization. The platform runs on Microsoft Azure and uses
       C3.ai's model-driven architecture enabling enterprise AI application development.
-    humanURL: https://www.bakerhughes.com/bhc3
+    humanURL: https://www.bakerhughes.com/cordant/solutions/strategic-partnerships-and-alliances/c3ai
     tags:
       - Artificial Intelligence
       - Energy
@@ -92,8 +92,8 @@ apis:
       - Predictive Maintenance
     properties:
       - type: Documentation
-        url: https://www.bakerhughes.com/bhc3
-      - type: APIReference
+        url: https://www.bakerhughes.com/cordant/solutions/strategic-partnerships-and-alliances/c3ai
+      - type: Website
         url: https://www.bakerhughes.com/ai-bakerhughesc3ai/
 common:
   - type: DomainSecurity
@@ -104,16 +104,26 @@ common:
     url: https://www.linkedin.com/company/bakerhughes
   - type: Website
     url: https://www.bakerhughes.com
-  - type: Portal
-    url: https://www.bakerhughes.com/company/digital
+  - type: DeveloperPortal
+    url: https://developer.bakerhughes.com
   - type: Blog
-    url: https://www.bakerhughes.com/company/news
+    url: https://www.bakerhughes.com/company/newsroom
   - type: Support
     url: https://www.bakerhughes.com/contact-us
   - type: PrivacyPolicy
-    url: https://www.bakerhughes.com/privacy-policy
+    url: https://www.bakerhughes.com/privacy
   - type: TermsOfService
-    url: https://www.bakerhughes.com/terms-and-conditions
+    url: https://www.bakerhughes.com/terms
+  - type: WellKnown
+    url: well-known/baker-hughes-well-known.yml
+  - type: Authentication
+    url: authentication/baker-hughes-authentication.yml
+  - type: OAuthScopes
+    url: scopes/baker-hughes-scopes.yml
+  - type: Conformance
+    url: conformance/baker-hughes-conformance.yml
+  - type: LLMsTxt
+    url: llms/baker-hughes-llms.txt
   - type: SpectralRules
     url: rules/baker-hughes-spectral-rules.yml
   - type: Vocabulary
@@ -172,3 +182,30 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-17'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v3
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    developer.bakerhughes.com is a Backstage developer portal whose catalog API answers 401
+    "Missing credentials" and whose only sign-in is a Keycloak realm (auth-developer.bakerhughes.com,
+    client app-cdp) with no self-serve registration — the sole contact is cordant_success@bakerhughes.com —
+    so the Cordant API reference and any OpenAPI live behind a customer tenant login; the only
+    machine-readable document Baker Hughes serves anonymously is that realm's OIDC discovery metadata,
+    and api.bakerhughes.com answers every path with an Incapsula 503.
+  evidence:
+    - url: https://developer.bakerhughes.com/api/catalog/entities?filter=kind=api
+      status: 401
+    - url: https://developer.bakerhughes.com/api/auth/keycloak/start?env=development
+      status: 302
+    - url: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
+      status: 200
+    - url: https://api.bakerhughes.com/openapi.json
+      status: 503
+    - url: https://www.bakerhughes.com/cordant/platform
+      status: 200
+  checked: '2026-09-17'
