@@ -2,15 +2,16 @@
 kin_checks:
   slug: baker-hughes
   schema_version: 0.22.0
-  scored_at: '2026-09-16'
-  run_ts: 2026-09-16T225339
-  note: Actionable checks only (missed + partial). earned/na are every other check
-    in rubric/scoring-0.22.0.yml; counts below let you verify that.
+  scored_at: '2026-09-17'
+  run_ts: 2026-09-17T233623
+  note: Actionable checks (missed + partial) in `checks`, plus the ids that did not
+    apply in `na`. Everything else in rubric/scoring-0.22.0.yml was earned; counts
+    below let you verify that.
   counts:
     total: 136
-    earned: 20
-    partial: 6
-    missed: 70
+    earned: 26
+    partial: 7
+    missed: 63
     na: 40
   checks:
   - id: multiple_apis
@@ -43,8 +44,6 @@ kin_checks:
     status: missed
   - id: rules_substantial
     status: missed
-  - id: conformance_declared
-    status: missed
   - id: overlay_published
     status: missed
   - id: change_log_present
@@ -63,9 +62,9 @@ kin_checks:
     status: missed
   - id: examples_published
     status: missed
-  - id: getting_started_present
+  - id: api_reference_present
     status: missed
-  - id: authentication_documented
+  - id: getting_started_present
     status: missed
   - id: sdk_count_1
     status: missed
@@ -92,10 +91,6 @@ kin_checks:
     status: missed
   - id: trust_center
     status: missed
-  - id: reg_oauth_scopes
-    status: missed
-  - id: reg_authentication_documented
-    status: missed
   - id: reg_vulnerability_disclosure
     status: missed
   - id: reg_privacy_policy
@@ -104,8 +99,6 @@ kin_checks:
   - id: reg_compliance_published
     status: missed
   - id: reg_named_standard_conformance
-    status: missed
-  - id: reg_consent_model
     status: missed
   - id: reg_certification_signal
     status: missed
@@ -127,8 +120,6 @@ kin_checks:
     status: missed
   - id: mcp_server
     status: missed
-  - id: auth_clarity
-    status: missed
   - id: idempotency
     status: missed
   - id: error_semantics
@@ -147,11 +138,7 @@ kin_checks:
     status: missed
   - id: dry_run_mode
     status: missed
-  - id: delegated_identity
-    status: missed
   - id: protected_resource_metadata
-    status: missed
-  - id: dynamic_client_registration
     status: missed
   - id: agentic_commerce
     status: missed
@@ -171,7 +158,52 @@ kin_checks:
   - id: plans_present
     status: partial
     earned: 2.0
+  - id: auth_clarity
+    status: partial
+    earned: 9.0
+    detail: 'grade: served'
   - id: rate_limit_signal
     status: partial
     earned: 3.5
     detail: 'grade: documented'
+  na:
+  - asyncapi_3_x
+  - channels_defined
+  - components_reuse
+  - contract_self_operated
+  - credentials_not_in_query
+  - error_responses_documented
+  - fhir_capability_statement
+  - fhir_resource_coverage
+  - graphql_descriptions
+  - graphql_sdl_present
+  - graphql_type_depth
+  - inbound_contract_published
+  - info_complete
+  - messages_with_schema
+  - oauth_flows_current
+  - oauth_scopes_enumerated
+  - openapi_3_0
+  - openapi_3_1
+  - openapi_3_2
+  - operations_description_coverage
+  - operations_operation_ids
+  - operations_summary_coverage
+  - operations_tagged
+  - os_code_of_conduct
+  - os_contribution_guide
+  - os_releases
+  - os_security_policy
+  - reg_camara_conformance
+  - reg_entitlement_terms
+  - reg_fapi_profile
+  - reg_pci_sca
+  - reg_smart_configuration
+  - reg_write_surface
+  - response_coverage
+  - security_applied
+  - security_schemes
+  - security_schemes_defined
+  - server_bindings
+  - servers_defined
+  - webhooks_or_callbacks
