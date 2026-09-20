@@ -2,12 +2,15 @@
   "repo": "baker-hughes",
   "feeds": [
     {
-      "source": "https://www.bakerhughes.com/company/digital",
-      "error": "HTTPError"
+      "source": "https://developer.bakerhughes.com",
+      "feed_url": "https://developer.bakerhughes.com",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 6,
-  "fetched": "2026-09-13T13:00:00Z",
+  "fetched": "2026-09-19T20:17:39Z",
   "agent_pulled": "2026-07-04",
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
