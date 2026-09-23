@@ -1,7 +1,9 @@
 ---
 title: AI by BakerHughesC3.ai
 url: https://www.bakerhughes.com/ai-bakerhughesc3ai/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Baker Hughes" press release artificial intelligence'
 position: 3
 source: serpapi-google

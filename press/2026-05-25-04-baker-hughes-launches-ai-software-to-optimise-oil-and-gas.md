@@ -1,7 +1,9 @@
 ---
 title: Baker Hughes launches AI software to optimise oil and gas ...
 url: https://www.oilandgasadvancement.com/press-releases/baker-hughes-launches-ai-software-to-optimise-oil-and-gas-production/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Baker Hughes" press release artificial intelligence'
 position: 4
 source: serpapi-google
