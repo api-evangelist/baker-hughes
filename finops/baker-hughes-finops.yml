@@ -114,10 +114,8 @@ apis:
 unitEconomics:
   - name: Cost per Monitored Asset
     metric: platform_license / monitored_assets
-    target: align to per-asset downtime / yield uplift
   - name: Cost per AI Use Case
     metric: ai_application_cost / instrumented_use_cases
-    target: TBD per business unit
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
