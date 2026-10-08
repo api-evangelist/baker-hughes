@@ -96,6 +96,12 @@ apis:
       - type: Website
         url: https://www.bakerhughes.com/ai-bakerhughesc3ai/
 common:
+  - type: Plans
+    url: plans/baker-hughes-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/baker-hughes-rate-limits.yml
+  - type: FinOps
+    url: finops/baker-hughes-finops.yml
   - type: DomainSecurity
     url: security/baker-hughes-domain-security.yml
   - type: GitHubOrganization
