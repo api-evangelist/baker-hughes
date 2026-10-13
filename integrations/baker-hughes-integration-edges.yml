@@ -1,0 +1,39 @@
+generated: '2026-10-13'
+method: searched
+checked:
+- https://azuremarketplace.microsoft.com/
+marketplace_apps: []
+edges:
+- partner_name: Microsoft Azure Marketplace
+  partner: microsoft-azure
+  partner_match: aggregator
+  type: marketplace
+  marketplace: azure-marketplace
+  channel: distribution
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=Baker%20Hughes%20Cordant%20Solutions
+  listing_count: 2
+  apps:
+  - Baker Hughes Cordant Asset Performance Management
+  - Baker Hughes Cordant Process Optimization
+  seller_name: Baker Hughes Cordant Solutions
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
+- partner_name: Microsoft Azure Marketplace
+  partner: microsoft-azure
+  partner_match: aggregator
+  type: marketplace
+  marketplace: azure-marketplace
+  channel: distribution
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=Baker%20Hughes%20Reservoir%20Software%20BV
+  listing_count: 3
+  apps:
+  - JewelSuite Geomechanics
+  - JewelSuite Reservoir Stimulation
+  - JewelSuite Subsurface Modeling
+  seller_name: Baker Hughes Reservoir Software BV
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
