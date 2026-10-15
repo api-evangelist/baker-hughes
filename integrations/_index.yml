@@ -15,3 +15,65 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
+- slug: baker-hughes-opc-foundation-opc-ua
+  label: OPC Foundation (OPC UA)
+  partner_name: OPC Foundation (OPC UA)
+  category: OPC UA products
+  type: register
+  channel: standard-directory
+  evidence: https://opcfoundation.org/products/view/aptara-mcs-2-0/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: OPC Foundation product marketplace (opcfoundation.org/products)
+    spec_file: null
+    standard: OPC UA
+    role: OPC UA certified product vendor
+    registered_name: Baker Hughes Company
+    member_id: '48'
+    website: http://www.bakerhughes.com
+    matched_domain: bakerhughes.com
+    matched_by: domain
+    listed_products: 2
+    certified_products:
+    - product: SCADA
+      certified_listings: 1
+      lapsed: false
+    listed_categories:
+    - None
+    sample_products:
+    - Baker Hughes Company Aptara MCS Show details
+    - Baker Hughes Company Bently Nevada™ System 1 OPC Server Show details
+    signal_note: certified_products = one entry per product CATEGORY with a certified product (diversity), never
+      per product; listed_products is context, never read
+    detected_by: sweep-industrial-robotics.py
+    detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
+- slug: baker-hughes-odva-cip-ethernet-ip
+  label: ODVA (CIP / EtherNet/IP)
+  partner_name: ODVA (CIP / EtherNet/IP)
+  category: CIP network products
+  type: register
+  channel: standard-directory
+  evidence: https://marketplace.odva.org/organizations/3414-os-operations-llc
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: ODVA Marketplace (marketplace.odva.org/organizations)
+    spec_file: null
+    standard: CIP (EtherNet/IP, DeviceNet, ControlNet, CompoNet)
+    role: ODVA licensed vendor (no listed product)
+    registered_name: Baker Hughes
+    website: https://www.bakerhughes.com/cordant
+    matched_domain: bakerhughes.com
+    matched_by: domain
+    licensed_technologies:
+    - EtherNet/IP
+    certified_products: []
+    signal_note: certified_products = one entry per TECHNOLOGY with a listed (Declaration of Conformity) product;
+      listed_products is context, never read
+    detected_by: sweep-industrial-robotics.py
+    detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
