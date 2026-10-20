@@ -1,31 +1,143 @@
-# Baker Hughes
+<!-- # *********************************************************************
+ # BH [Highly] Confidential [Unpublished] Copyright 2025. Baker Hughes
+ #
+ # NOTICE: All information contained herein is, and remains the property of Baker Hughes, and/or its affiliates. The
+ # intellectual and technical concepts contained herein are proprietary to Baker Hughes and/or its affiliates and may be
+ # covered by patents, copyrights, and/or trade secrets. Dissemination of this information or reproduction of this
+ # material is strictly forbidden unless prior written permission is obtained from Baker Hughes.
+# ********************************************************************* -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <!-- Empty description suppresses the snippet shown in Teams/Outlook/Slack link previews -->
+    <meta name="description" content="" />
+    <!-- Prevent search engines from indexing/snippeting this portal -->
+    <meta name="robots" content="noindex, nofollow, nosnippet, noimageindex" />
+    <meta name="googlebot" content="noindex, nofollow, nosnippet" />
+    <!-- Remove twitter card entirely so no social preview is generated -->
+    <meta name="twitter:card" content="none" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link
+      rel="manifest"
+      href="/manifest.json"
+      crossorigin="use-credentials"
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Baker Hughes Developer Portal</title>
+  <meta name="backstage-app-mode" content="public"><meta name="backstage-public-path" content="/"><script defer src="/static/runtime.4b1f822c.js"></script><script defer src="/static/module-backstage.b5bd07e2.js"></script><script defer src="/static/module-material-ui.3a77c0cc.js"></script><script defer src="/static/module-react-aria.28f47914.js"></script><script defer src="/static/module-lodash.d559f5c1.js"></script><script defer src="/static/module-date-fns.e6ec5c7e.js"></script><script defer src="/static/module-azure.d0bdff62.js"></script><script defer src="/static/module-yaml.6b0990a8.js"></script><script defer src="/static/module-ajv.06e1f707.js"></script><script defer src="/static/module-typespec.ef917f9d.js"></script><script defer src="/static/module-mui.90160c22.js"></script><script defer src="/static/module-axios.ddd3e009.js"></script><script defer src="/static/module-dagrejs.305a0b2f.js"></script><script defer src="/static/module-material-table.5aa399aa.js"></script><script defer src="/static/module-micromark-core-commonmark.6d530f9d.js"></script><script defer src="/static/module-parse5.b1755bf0.js"></script><script defer src="/static/module-react-aria-components.096580cd.js"></script><script defer src="/static/module-octokit.199269d8.js"></script><script defer src="/static/module-zod.42b4c88e.js"></script><script defer src="/static/module-react-dom.e30dc02c.js"></script><script defer src="/static/module-i18next.02314eb3.js"></script><script defer src="/static/module-remixicon.fad66966.js"></script><script defer src="/static/module-react-beautiful-dnd.cc39873f.js"></script><script defer src="/static/module-remix-run.93afd969.js"></script><script defer src="/static/vendor.7818294d.js"></script><script defer src="/static/main.197d9e61.js"></script>
+<script type="backstage.io/config">
+[
+  {
+    "context": "app",
+    "deprecatedKeys": [
+      {
+        "key": "backend.auth.keys",
+        "description": "this will be removed when the backwards compatibility is no longer needed with backend-common"
+      }
+    ],
+    "data": {
+      "app": {
+        "baseUrl": "https://developer.bakerhughes.com",
+        "title": "Baker Hughes Developer Portal",
+        "support": {
+          "items": [
+            {
+              "title": "Contact Support",
+              "icon": "email",
+              "links": [
+                {
+                  "url": "mailto:cordant_success@bakerhughes.com",
+                  "title": "Email Us"
+                }
+              ]
+            }
+          ],
+          "url": "mailto:cordant_success@bakerhughes.com"
+        }
+      },
+      "backend": {
+        "baseUrl": "https://developer.bakerhughes.com"
+      },
+      "techdocs": {
+        "builder": "local",
+        "sanitizer": {
+          "allowedIframeHosts": [
+            "www.youtube.com",
+            "bakerhughes-my.sharepoint.com",
+            "portalpoc.np-0000183.npause1.bakerhughes.com"
+          ]
+        }
+      },
+      "organization": {
+        "name": "Baker Hughes"
+      },
+      "integrations": {
+        "github": [
+          {
+            "host": "github.com"
+          }
+        ]
+      },
+      "auth": {
+        "environment": "development",
+        "providers": {
+          "keycloak": {}
+        }
+      },
+      "permission": {
+        "enabled": true
+      }
+    }
+  }
+]
+</script>
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-> Baker Hughes is an energy technology company. Its digital portfolio is the Cordant industrial software platform (asset performance management, process optimization, emissions management) and the BHC3 AI Suite built with C3.ai. Cordant "offers APIs for integration" with enterprise and OT/IT systems, but no public API reference, OpenAPI, SDK or self-serve developer sign-up is published: the developer portal at developer.bakerhughes.com is a Backstage instance whose catalog is behind a Keycloak login.
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-Generated by API Evangelist on 2026-09-17 from the company's public web surface and the api-evangelist/baker-hughes profile. Baker Hughes does not publish an llms.txt of its own (www.bakerhughes.com/llms.txt answers an Imperva challenge; developer.bakerhughes.com/llms.txt answers the SPA shell).
-
-## Products
-
-- [Cordant](https://www.bakerhughes.com/cordant): Modular industrial software platform for APM, process optimization and emissions management.
-- [Cordant platform](https://www.bakerhughes.com/cordant/platform): Platform overview; the only public page that mentions APIs and OT/IT connectivity.
-- [Baker Hughes and C3.ai (BHC3 AI Suite)](https://www.bakerhughes.com/cordant/solutions/strategic-partnerships-and-alliances/c3ai): Enterprise AI applications for oil and gas, running on Microsoft Azure.
-
-## Developer surface
-
-- [Baker Hughes Developer Portal](https://developer.bakerhughes.com): Backstage developer portal. Anonymous access shows only a sign-in; the catalog API (/api/catalog/entities) returns 401 "Missing credentials". Support: cordant_success@bakerhughes.com.
-- [OIDC discovery (Keycloak realm 'dedicated')](https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration): The one machine-readable document Baker Hughes serves for this surface — OpenID Connect / OAuth 2.0 metadata with PKCE, PAR, device, CIBA, token-exchange and mTLS support.
-- [GitHub organization](https://github.com/BakerHughes): Exists; 0 public repositories.
-
-## Company
-
-- [Contact](https://www.bakerhughes.com/contact-us)
-- [Newsroom](https://www.bakerhughes.com/company/newsroom)
-- [Privacy](https://www.bakerhughes.com/privacy)
-- [Terms](https://www.bakerhughes.com/terms)
-
-## Profile artifacts (API Evangelist)
-
-- [apis.yml](https://raw.githubusercontent.com/api-evangelist/baker-hughes/refs/heads/main/apis.yml): APIs.json index for this profile.
-- [Well-known probe](https://github.com/api-evangelist/baker-hughes/blob/main/well-known/baker-hughes-well-known.yml): Every discovery path probed on every known host, with status codes.
-- [Authentication profile](https://github.com/api-evangelist/baker-hughes/blob/main/authentication/baker-hughes-authentication.yml): Read from the OIDC discovery document.
-- [Conformance](https://github.com/api-evangelist/baker-hughes/blob/main/conformance/baker-hughes-conformance.yml): OAuth/OIDC RFCs the identity realm advertises.
+      To begin the development, run `yarn start`.
+      To create a production bundle, use `yarn build`.
+    -->
+  </body>
+</html>

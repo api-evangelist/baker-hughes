@@ -1,0 +1,58 @@
+generated: '2026-10-20'
+method: probed
+source: pre-flight dossier (docs platform, portal detections) + CNAME chains and response headers of the hosts apis.yml names
+registry: all/0-working/vendors.yml
+areas_vocabulary:
+- documentation
+- developer-portal
+- api-gateway
+- cdn
+- hosting
+- sdk-generation
+- api-collections
+- status-page
+- support
+- community
+- identity
+- mcp-hosting
+vendors:
+- vendor: fastly
+  name: Fastly
+  area: cdn
+  host: www.bakerhughes.com
+  evidence: header:x-served-by:cache-
+  signal: header
+  confidence: high
+  kin_score: []
+- vendor: imperva
+  name: Imperva
+  area: cdn
+  host: developer.bakerhughes.com
+  evidence: header:x-cdn:imperva
+  signal: header
+  confidence: high
+  kin_score: []
+- vendor: keycloak
+  name: Keycloak
+  area: identity
+  host: auth-developer.bakerhughes.com
+  evidence: baker-hughes-openid-configuration.json names keycloak in its OAuth metadata
+  signal: oauth-metadata
+  confidence: high
+  kin_score:
+  - authentication
+reliance:
+  areas_vendor_served:
+  - cdn
+  - identity
+  vendor_count: 3
+  areas_observed: 12
+  share_of_observable_areas: 0.167
+  note: areas where a third party was DETECTED serving this provider; an area absent here was either self-run or not observed, and this script
+    cannot tell those apart
+checked:
+- 'docs-platform: custom'
+- developer.bakerhughes.com (Documentation)
+- www.bakerhughes.com (Website)
+- developer.bakerhughes.com (DeveloperPortal)
+- www.bakerhughes.com (Support)

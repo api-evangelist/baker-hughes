@@ -8,7 +8,7 @@ note: Every entry below is read from the provider-served OIDC discovery document
   AsyncAPI, GraphQL SDL or WSDL is public, so pagination/idempotency/RFC 9457/domain-standard conformance are all
   unknown, not false. Baker Hughes markets ISA/IEC 62443 certification for Bently Nevada hardware (white paper 179M4439)
   — a product certification, not an API-contract conformance, so it is listed as a claim only.
-conformance:
+standards:
 - id: oidc
   name: OpenID Connect Discovery 1.0
   conforms: true

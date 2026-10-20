@@ -1,0 +1,92 @@
+generated: '2026-10-20'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 6
+  own: 4
+  other_domain: 0
+  platform: 2
+  roles:
+  - api
+  - other
+  - portal
+  - source
+  - website
+hosts:
+- host: api.bakerhughes.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: bakerhughes.com
+  role: api
+  relation: own
+- host: auth-developer.bakerhughes.com
+  found_by:
+  - vendor-detect
+  types: []
+  serves:
+  - identity
+  vendor: keycloak
+  registrable_domain: bakerhughes.com
+  role: other
+  relation: own
+- host: developer.bakerhughes.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Documentation
+  - DeveloperPortal
+  serves:
+  - docs
+  - cdn
+  vendor: imperva
+  registrable_domain: bakerhughes.com
+  role: portal
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: www.bakerhughes.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - Blog
+  - Support
+  - PrivacyPolicy
+  - TermsOfService
+  serves:
+  - docs
+  - cdn
+  vendor: fastly
+  registrable_domain: bakerhughes.com
+  role: website
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform

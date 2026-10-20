@@ -1,5 +1,5 @@
 generated: '2026-09-17'
-method: searched
+method: none
 source: registry.npmjs.org search (bakerhughes, "baker hughes", cordant, "bently nevada"); pypi.org/pypi/<name>/json for bakerhughes, baker-hughes, cordant, bently-nevada, bhc3, system1; azuresearch-usnc.nuget.org (bakerhughes, bently); github.com/BakerHughes
 provider: Baker Hughes
 providerId: baker-hughes

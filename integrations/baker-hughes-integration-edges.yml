@@ -1,5 +1,12 @@
-generated: '2026-10-13'
+generated: '2026-10-20'
 method: searched
+source:
+- https://opcfoundation.org/products/
+- https://marketplace.odva.org/organizations
+- https://zapier.com/apps/baker-hughes/integrations
+- https://n8n.io/integrations/baker-hughes/
+- https://composio.dev/toolkits/baker-hughes
+- https://monid.ai/tools/baker-hughes
 checked:
 - https://azuremarketplace.microsoft.com/
 - https://marketplace.odva.org/organizations
@@ -8,6 +15,11 @@ checked:
 - https://repo.ros2.org/rosdistro_cache/jazzy-cache.yaml.gz
 - https://repo.ros2.org/rosdistro_cache/kilted-cache.yaml.gz
 - https://repo.ros2.org/rosdistro_cache/rolling-cache.yaml.gz
+- https://composio.dev/toolkits/baker-hughes
+- https://monid.ai/tools/baker-hughes
+- https://n8n.io/integrations/baker-hughes/
+- https://zapier.com/apps/baker-hughes/integrations
+summary: null
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -129,6 +141,4 @@ edges:
     detected: '2026-10-15'
   detected_by: sweep-industrial-robotics.py
   first_seen: '2026-10-15'
-source:
-- https://opcfoundation.org/products/
-- https://marketplace.odva.org/organizations
+templates: []

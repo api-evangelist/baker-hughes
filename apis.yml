@@ -1,7 +1,10 @@
 aid: baker-hughes
+
 url: >-
   https://raw.githubusercontent.com/api-evangelist/baker-hughes/refs/heads/main/apis.yml
+
 name: Baker Hughes
+
 description: >-
   Baker Hughes is an energy technology company providing solutions to energy and industrial
   customers worldwide. Their digital portfolio includes the Cordant industrial software
@@ -9,7 +12,9 @@ description: >-
   along with the BHC3 AI Suite (in alliance with C3.ai) for enterprise AI applications in oil
   and gas. Baker Hughes operates across oilfield services, industrial equipment, and digital
   solutions segments globally.
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -21,6 +26,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: enterprise
   onboarding: unknown
@@ -33,7 +39,9 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/baker-hughes.png
+
 tags:
   - Energy Technology
   - Industrial IoT
@@ -41,6 +49,7 @@ tags:
   - Asset Performance Management
   - Digital Energy
   - Fortune 500
+
 tags_raw:
   - Energy Technology
   - Industrial IoT
@@ -48,54 +57,30 @@ tags_raw:
   - Asset Performance Management
   - Digital Energy
   - Fortune 500
+
 created: '2026-03-21'
+
 modified: '2026-09-17'
+
 specificationVersion: '0.23'
-apis:
-  - aid: baker-hughes:cordant-platform
-    name: Baker Hughes Cordant Industrial Platform
-    description: >-
-      Cordant is Baker Hughes' modular AI-enabled industrial enterprise software platform for
-      asset performance management (APM), process optimization, and emissions management.
-      It provides a digital thread across energy and industrial operations, connecting data,
-      automating decision-making, and delivering predictive insights. Cordant offers APIs for
-      integration with existing enterprise systems including OT/IT connectivity for asset data.
-    humanURL: https://www.bakerhughes.com/cordant
-    tags:
-      - Asset Performance Management
-      - Industrial IoT
-      - Process Optimization
-      - Emissions Management
-    properties:
-      - type: Documentation
-        url: https://www.bakerhughes.com/cordant/platform
-      - type: HelpCenter
-        url: https://www.bakerhughes.com/cordant/tech-support
-  - aid: baker-hughes:bhc3-ai-suite
-    name: Baker Hughes BHC3 AI Suite
-    description: >-
-      The BHC3 AI Suite is a joint product from Baker Hughes and C3.ai providing pre-built,
-      configurable AI applications for the energy industry. Applications cover predictive
-      maintenance, reliability, production optimization, inventory optimization, well placement,
-      well integrity, and yield optimization. The platform runs on Microsoft Azure and uses
-      C3.ai's model-driven architecture enabling enterprise AI application development.
-    humanURL: https://www.bakerhughes.com/cordant/solutions/strategic-partnerships-and-alliances/c3ai
-    tags:
-      - Artificial Intelligence
-      - Energy
-      - Oil and Gas
-      - Predictive Maintenance
-    tags_raw:
-      - Artificial Intelligence
-      - Energy
-      - Oil And Gas
-      - Predictive Maintenance
-    properties:
-      - type: Documentation
-        url: https://www.bakerhughes.com/cordant/solutions/strategic-partnerships-and-alliances/c3ai
-      - type: Website
-        url: https://www.bakerhughes.com/ai-bakerhughesc3ai/
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+
 common:
+  - type: Spectral
+    url: rules/baker-hughes-spectral-rules.yml
+  - type: Spectral
+    url: rules/baker-hughes-jsonschema-spectral-rules.yml
+  - type: Hosts
+    url: hosts/baker-hughes-hosts.yml
+  - type: IntegrationEdges
+    url: integrations/baker-hughes-integration-edges.yml
+  - type: Vendors
+    url: vendors/baker-hughes-vendors.yml
+  - type: Documentation
+    url: https://developer.bakerhughes.com/
   - type: Plans
     url: plans/baker-hughes-plans-pricing.yml
   - type: RateLimits
@@ -185,14 +170,58 @@ common:
         description: Integration with IBM Maximo asset management for work order lifecycle.
       - name: Honeywell
         description: Integration with Honeywell process control and DCS systems.
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+
+apis:
+  - aid: baker-hughes:cordant-platform
+    name: Baker Hughes Cordant Industrial Platform
+    description: >-
+      Cordant is Baker Hughes' modular AI-enabled industrial enterprise software platform for
+      asset performance management (APM), process optimization, and emissions management.
+      It provides a digital thread across energy and industrial operations, connecting data,
+      automating decision-making, and delivering predictive insights. Cordant offers APIs for
+      integration with existing enterprise systems including OT/IT connectivity for asset data.
+    humanURL: https://www.bakerhughes.com/cordant
+    tags:
+      - Asset Performance Management
+      - Industrial IoT
+      - Process Optimization
+      - Emissions Management
+    properties:
+      - type: Documentation
+        url: https://www.bakerhughes.com/cordant/platform
+      - type: HelpCenter
+        url: https://www.bakerhughes.com/cordant/tech-support
+  - aid: baker-hughes:bhc3-ai-suite
+    name: Baker Hughes BHC3 AI Suite
+    description: >-
+      The BHC3 AI Suite is a joint product from Baker Hughes and C3.ai providing pre-built,
+      configurable AI applications for the energy industry. Applications cover predictive
+      maintenance, reliability, production optimization, inventory optimization, well placement,
+      well integrity, and yield optimization. The platform runs on Microsoft Azure and uses
+      C3.ai's model-driven architecture enabling enterprise AI application development.
+    humanURL: https://www.bakerhughes.com/cordant/solutions/strategic-partnerships-and-alliances/c3ai
+    tags:
+      - Artificial Intelligence
+      - Energy
+      - Oil and Gas
+      - Predictive Maintenance
+    tags_raw:
+      - Artificial Intelligence
+      - Energy
+      - Oil And Gas
+      - Predictive Maintenance
+    properties:
+      - type: Documentation
+        url: https://www.bakerhughes.com/cordant/solutions/strategic-partnerships-and-alliances/c3ai
+      - type: Website
+        url: https://www.bakerhughes.com/ai-bakerhughesc3ai/
+
 x-enrichment:
-  date: '2026-09-17'
+  date: '2026-10-20'
   status: minimal
-  artifacts_added: 7
-  pass: local-v3
+  artifacts_added: 0
+  pass: local-v5
+
 x-coverage:
   state: gated
   reason: customer-only-docs
@@ -206,6 +235,8 @@ x-coverage:
   evidence:
     - url: https://developer.bakerhughes.com/api/catalog/entities?filter=kind=api
       status: 401
+    - url: https://developer.bakerhughes.com/
+      status: 200
     - url: https://developer.bakerhughes.com/api/auth/keycloak/start?env=development
       status: 302
     - url: https://auth-developer.bakerhughes.com/auth/realms/dedicated/.well-known/openid-configuration
@@ -214,4 +245,4 @@ x-coverage:
       status: 503
     - url: https://www.bakerhughes.com/cordant/platform
       status: 200
-  checked: '2026-09-17'
+  checked: '2026-10-20'
