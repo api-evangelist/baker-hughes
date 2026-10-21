@@ -77,3 +77,109 @@
     detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
+- slug: baker-hughes-the-open-group-osdu-forum
+  label: The Open Group OSDU Forum
+  partner_name: The Open Group OSDU Forum
+  category: subsurface data platform standards forum membership
+  type: register
+  channel: standard-directory
+  evidence: https://reports.opengroup.org/osdu_forum.shtml
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: The Open Group OSDU Forum membership report (reports.opengroup.org/osdu_forum.shtml)
+    standard: OSDU Data Platform
+    spec_file: null
+    role: osdu-forum-member
+    registered_name: Baker Hughes
+    register_country: Netherlands
+    register_id: https://www.bakerhughes.com
+    matched_domain: bakerhughes.com
+    matched_by: domain
+    signal_note: 'participation only: membership of the standards forum / consortium (The Open Group hourly membership
+      report, which links each member''s website); listing is not conformance'
+    detected_by: sweep-energy-subsurface.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: baker-hughes-energistics-consortium-witsml-prodml-resqml
+  label: Energistics Consortium (WITSML / PRODML / RESQML)
+  partner_name: Energistics Consortium (WITSML / PRODML / RESQML)
+  category: upstream data-exchange standards consortium membership
+  type: register
+  channel: standard-directory
+  evidence: https://reports.opengroup.org/energistics.shtml
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: The Open Group Energistics Consortium membership report (reports.opengroup.org/energistics.shtml)
+    standard: Energistics standards (WITSML / PRODML / RESQML / ETP)
+    spec_file: null
+    role: energistics-member
+    registered_name: Baker Hughes
+    register_country: Netherlands
+    register_id: https://www.bakerhughes.com
+    matched_domain: bakerhughes.com
+    matched_by: domain
+    signal_note: 'participation only: membership of the standards forum / consortium (The Open Group hourly membership
+      report, which links each member''s website); listing is not conformance'
+    detected_by: sweep-energy-subsurface.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: baker-hughes-energistics-witsml-certification
+  label: Energistics (WITSML certification)
+  partner_name: Energistics (WITSML certification)
+  category: WITSML certified drilling data products
+  type: register
+  channel: standard-directory
+  evidence: https://www.energistics.org/witsml-v1411-certified-products
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Energistics WITSML certified products (energistics.org, v1.4.1.1 + v1.3.1 lists)
+    standard: WITSML (Energistics)
+    spec_file: null
+    role: witsml-certified-vendor
+    registered_name: Baker Hughes
+    matched_domain: bakerhughes.com
+    matched_by: domain
+    certified_products:
+    - product: WITSML 1.4.1.1 certified store / server
+      product_type: WITSML store (server)
+      witsml_version: 1.4.1.1
+      lapsed: false
+      latest_pass: '2023-10-08'
+    signal_note: certified_products = one entry per WITSML product type, never per product or version release; v1.3.1
+      entries are lapsed because the v1.4.1.1 behaviour-based test replaced every earlier programme; product names
+      are context, never counted
+    detected_by: sweep-energy-subsurface.py
+    detected: '2026-10-20'
+    identity: wikidata Q804353 'Baker Hughes' P856 http://www.bakerhughes.com
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  status: not-a-workflow
+  arazzo: null
+- slug: baker-hughes-pidx-international-petroleum-industry-data-exchange
+  label: PIDX International (Petroleum Industry Data Exchange)
+  partner_name: PIDX International (Petroleum Industry Data Exchange)
+  category: oil & gas e-commerce standards body membership
+  type: register
+  channel: standard-directory
+  evidence: https://pidx.org/current-members/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: PIDX current members (pidx.org/current-members/)
+    standard: PIDX (Petroleum Industry Data Exchange e-commerce standards)
+    spec_file: null
+    role: pidx-member
+    registered_name: bakerhughes
+    register_id: https://www.bakerhughes.com/
+    matched_domain: bakerhughes.com
+    matched_by: domain
+    signal_note: 'participation only: membership of the standards body; the member page is a logo wall that links
+      each member''s website (the link is the identity)'
+    detected_by: sweep-energy-subsurface.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
