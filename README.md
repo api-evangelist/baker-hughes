@@ -1,4 +1,4 @@
-# Baker Hughes (baker-hughes)
+# Baker Hughes
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,122 +66,139 @@
 
 Baker Hughes is an energy technology company providing solutions to energy and industrial customers worldwide. Their digital portfolio includes the Cordant industrial software platform for asset performance management, process optimization, and emissions management, along with the BHC3 AI Suite (in alliance with C3.ai) for enterprise AI applications in oil and gas. Baker Hughes operates across oilfield services, industrial equipment, and digital solutions segments globally.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/baker-hughes/refs/heads/main/apis.yml)
+**Areas:** Energy Technology · Industrial IoT · Oil and Gas · Asset Performance Management · Digital Energy · Fortune 500
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Baker Hughes on APIs.io
 
-## Tags:
+Everything profiled for Baker Hughes is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/baker-hughes/](https://apis.io/providers/baker-hughes/)** — or go straight to one of the APIs or properties below.
 
- - Energy Technology, Industrial IoT, Oil And Gas, Asset Performance Management, Digital Energy
+### APIs (2)
 
-## Timestamps
+- [Baker Hughes Cordant Industrial Platform](https://apis.io/apis/baker-hughes/cordant-platform/) — Cordant is Baker Hughes' modular AI-enabled industrial enterprise software platform for asset performance management (APM), process optimization, and…
+- [Baker Hughes BHC3 AI Suite](https://apis.io/apis/baker-hughes/bhc3-ai-suite/) — The BHC3 AI Suite is a joint product from Baker Hughes and C3.ai providing pre-built, configurable AI applications for the energy industry. Applications…
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-04-21
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Baker Hughes Cordant Industrial Platform
-Cordant is Baker Hughes' modular AI-enabled industrial enterprise software platform for asset performance management (APM), process optimization, and emissions management. It provides a digital thread across energy and industrial operations, connecting data, automating decision-making, and delivering predictive insights.
+#### JSON Schema (2)
 
-**Human URL:** [https://www.bakerhughes.com/cordant](https://www.bakerhughes.com/cordant)
+The data models the API reads and writes.
 
-#### Tags:
+- [Asset](https://apis.io/schemas/baker-hughes/baker-hughes-asset/)
+- [Prediction](https://apis.io/schemas/baker-hughes/baker-hughes-prediction/)
 
- - Asset Performance Management, Industrial IoT, Process Optimization, Emissions Management
+#### JSON-LD (1)
 
-#### Properties
+Linked-data contexts for the provider's vocabulary.
 
-- [Documentation](https://www.bakerhughes.com/cordant/platform)
-- [APIReference](https://www.bakerhughes.com/cordant)
+- [Baker Hughes Context](https://apis.io/jsonld/baker-hughes/baker-hughes-context/)
 
-### Baker Hughes BHC3 AI Suite
-The BHC3 AI Suite is a joint product from Baker Hughes and C3.ai providing pre-built, configurable AI applications for the energy industry. Applications cover predictive maintenance, reliability, production optimization, inventory optimization, well placement, well integrity, and yield optimization.
+#### Vocabulary (1)
 
-**Human URL:** [https://www.bakerhughes.com/bhc3](https://www.bakerhughes.com/bhc3)
+The provider's domain terms, defined.
 
-#### Tags:
+- [Baker Hughes Vocabulary](https://apis.io/vocabularies/baker-hughes/baker-hughes-vocabulary/)
 
- - Artificial Intelligence, Energy, Oil And Gas, Predictive Maintenance
+#### Governance rules (2)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Documentation](https://www.bakerhughes.com/bhc3)
-- [APIReference](https://www.bakerhughes.com/ai-bakerhughesc3ai/)
+- [Baker Hughes — jsonschema rules](https://apis.io/rules/baker-hughes/baker-hughes-jsonschema-spectral-rules/)
+- [Baker Hughes API Rules](https://apis.io/rules/baker-hughes/baker-hughes-spectral-rules/)
 
-## Common Properties
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Baker Hughes Authentication](https://apis.io/security/baker-hughes/baker-hughes-authentication/)
+- [Baker Hughes Domain Security](https://apis.io/security/baker-hughes/baker-hughes-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Baker Hughes Scopes](https://apis.io/scopes/baker-hughes/baker-hughes-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Baker Hughes Plans Pricing](https://apis.io/plans/baker-hughes/baker-hughes-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Baker Hughes Rate Limits](https://apis.io/rate-limits/baker-hughes/baker-hughes-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Baker Hughes Finops](https://apis.io/finops/baker-hughes/baker-hughes-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.bakerhughes.com)
-- [Portal](https://www.bakerhughes.com/company/digital)
-- [Blog](https://www.bakerhughes.com/company/news)
+- [Documentation](https://developer.bakerhughes.com/)
 - [Support](https://www.bakerhughes.com/contact-us)
-- [PrivacyPolicy](https://www.bakerhughes.com/privacy-policy)
-- [TermsOfService](https://www.bakerhughes.com/terms-and-conditions)
+- [Blog](https://www.bakerhughes.com/company/newsroom)
+- [Terms of service](https://www.bakerhughes.com/terms)
+- [Privacy policy](https://www.bakerhughes.com/privacy)
+- [GitHub](https://github.com/BakerHughes)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Asset Performance Management | AI-powered predictive maintenance and reliability for industrial assets. |
-| Process Optimization | Real-time process monitoring and optimization for energy and industrial operations. |
-| Emissions Management | Track, measure, and reduce greenhouse gas emissions across operations. |
-| Enterprise AI Applications | Pre-built AI applications for oil and gas use cases including production optimization and well integrity. |
-| OT/IT Integration | Connectivity between operational technology (OT) sensor data and enterprise IT systems. |
-| Digital Thread | Connected data fabric linking assets, processes, and enterprise systems across operations. |
-| Well Integrity Monitoring | Continuous monitoring of well barrier status and integrity for safe operations. |
-| Production Optimization | AI-driven optimization of oil and gas production rates from well and reservoir data. |
+**Kin Score 28.6** — thin · rubric 0.24.0 · scored 2026-10-20
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 10.7 |
+| Contract governance | 41.7 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 26.3 |
 
-| Name | Description |
-|------|-------------|
-| Predictive Maintenance | Predict equipment failures before they occur to reduce unplanned downtime and maintenance costs. |
-| Production Optimization | Optimize oil and gas production rates using AI-driven insights from well and reservoir data. |
-| Sustainability Reporting | Monitor and report on emissions, energy consumption, and ESG metrics across facilities. |
-| Industrial Process Control | Automate and optimize industrial processes using real-time sensor data and AI recommendations. |
-| Well Lifecycle Management | Monitor and optimize oil and gas well performance across the full production lifecycle. |
-| Inventory Optimization | Optimize spare parts inventory for maintenance operations using AI demand forecasting. |
+**Agent readiness 15.7** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Microsoft Azure | BHC3 AI Suite is optimized to run on Microsoft Azure cloud infrastructure. |
-| C3.ai | Strategic AI alliance providing enterprise AI platform capabilities for BHC3. |
-| SAP | Integration with SAP ERP for asset and maintenance management data. |
-| OSIsoft PI | Integration with OSIsoft PI data historian for real-time process data. |
-| Maximo | Integration with IBM Maximo asset management for work order lifecycle. |
-| Honeywell | Integration with Honeywell process control and DCS systems. |
+**Regulatory alignment 34.4** — Energy & Utilities
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/baker-hughes/](https://apis.io/providers/baker-hughes/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### JSON Schema
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Asset](json-schema/baker-hughes-asset-schema.json)
-- [Prediction](json-schema/baker-hughes-prediction-schema.json)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Baker Hughes: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON-LD
+## Open an issue
 
-- [Baker Hughes JSON-LD Context](json-ld/baker-hughes-context.jsonld)
-
-## Capabilities
-
-Naftiko capabilities for Baker Hughes industrial platform workflows.
-
-- [Baker Hughes Industrial Platform](capabilities/baker-hughes-industrial-platform.yaml) — Asset monitoring, predictive maintenance, and emissions tracking workflows
-
-## Vocabulary
-
-- [Baker Hughes Vocabulary](vocabulary/baker-hughes-vocabulary.yaml) — Taxonomy covering 6 resources, 6 actions, 3 workflows, and 4 personas for industrial IoT and energy AI
-
-## Rules
-
-- [Baker Hughes Spectral Rules](rules/baker-hughes-spectral-rules.yml) — 16 rules across 6 categories enforcing Baker Hughes API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/baker-hughes/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
