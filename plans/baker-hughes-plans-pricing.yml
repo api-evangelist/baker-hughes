@@ -1,0 +1,88 @@
+name: Baker Hughes API Plans
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Baker Hughes
+providerId: baker-hughes
+created: '2026-05-04'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+method: generated
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - Energy Technology
+  - Industrial IoT
+  - Oil And Gas
+  - Asset Performance Management
+  - Digital Energy
+description: Baker Hughes' digital products (Cordant Industrial Platform and BHC3 AI Suite) are sold via
+  enterprise contract with custom-negotiated pricing. There is no published self-serve API plan, no public
+  rate card, and no consumer-tier pricing — access requires a sales engagement, MSA, and integration
+  scoping. Numeric tier limits are not asserted because none are publicly documented.
+notes: No public pricing or self-serve API plan published. Cordant and BHC3 AI Suite engagements are
+  scoped through Baker Hughes Digital sales. Reconcile with executed contract or partner addendum once
+  available. Do not infer per-call or per-asset prices from any third-party source.
+sources:
+  - https://www.bakerhughes.com/cordant
+  - https://www.bakerhughes.com/bhc3
+plans:
+  - id: baker-hughes-enterprise
+    name: Enterprise (Custom-Negotiated)
+    type: enterprise
+    description: Custom-negotiated commercial agreement covering Cordant and/or BHC3 AI Suite. Pricing,
+      data residency, deployment topology (cloud vs on-prem), API quotas, and SLAs are all set per contract.
+    entries:
+      - label: Platform License
+        description: Custom-priced enterprise license covering platform access and named applications
+        name: platform_license
+        type: subscription
+        metric: year
+        limit: -1
+        timeFrame: year
+        geo: configurable
+        domains: []
+        unit: 1
+        price: contact sales
+        userMultiplied: false
+      - label: API Access
+        description: API quotas and integration scope set per contract
+        name: api_access
+        type: quota
+        metric: varies
+        limit: -1
+        timeFrame: month
+        geo: configurable
+        domains: []
+        unit: 1
+        price: contact sales
+        userMultiplied: false
+    elements:
+      - name: Baker Hughes Cordant Industrial Platform
+      - name: Baker Hughes BHC3 AI Suite
+      - name: Custom Data Residency
+      - name: Contractual SLAs
+      - name: Named Technical Account Management
+      - name: Integration Scoping with Baker Hughes Digital
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - subscription
+  units:
+  - negotiated
+  - period
+  plans:
+  - name: Enterprise (Custom-Negotiated)
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - negotiated
+    - period
+    periods:
+    - month
+    - year
