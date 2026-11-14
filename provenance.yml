@@ -8,6 +8,12 @@ artifacts:
   conformance/baker-hughes-conformance.yml:
     method: unknown
     evidence: no authorship recorded
+  data-license/baker-hughes-data-license.yml:
+    method: harvested
+    evidence: declared in the artifact
+  eligibility/baker-hughes-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
   finops/baker-hughes-finops.yml:
     method: generated
     evidence: declared in the artifact
@@ -15,6 +21,12 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   heartbeat/2026-11-02.yml:
+    method: unknown
+    evidence: no authorship recorded
+  heartbeat/2026-11-06.yml:
+    method: unknown
+    evidence: no authorship recorded
+  heartbeat/2026-11-13.yml:
     method: unknown
     evidence: no authorship recorded
   hosts/baker-hughes-hosts.yml:
@@ -38,7 +50,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -104,6 +116,9 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   llms/baker-hughes-llms-provenance.yml:
     method: searched
     evidence: 'derive-llms-provenance.py: harvested'
@@ -131,6 +146,9 @@ artifacts:
   press/2026-05-25-05-baker-hughes-and-c3-ai-to-provide-joint-enterprise-ai.md:
     method: unknown
     evidence: no authorship recorded
+  privacy/baker-hughes-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/baker-hughes-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
@@ -161,6 +179,9 @@ artifacts:
   security/baker-hughes-domain-security.yml:
     method: unknown
     evidence: no authorship recorded
+  terms/baker-hughes-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
   vendors/baker-hughes-vendors.yml:
     method: unknown
     evidence: no authorship recorded
